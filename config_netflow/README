@@ -1,0 +1,1 @@
+This folder contains the script to configure NetFlow on Cisco devices, and apply the flow monitors to trunk and routed interfaces.
