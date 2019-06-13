@@ -1,1 +1,16 @@
 This folder contains the script to configure NetFlow on Cisco devices, and apply the flow monitors to trunk and routed interfaces.
+
+The main file you will run from PowerShell or CLI is the "netflow.py" file, which will import and run the other Python files depending on
+the OS type the Cisco device is running. 
+
+User will be responsible for providing configuration files the scripts will use to push to the devices. User will also need to change the
+capitalized text in the script to reflect the actual names of the flow records, monitors, exporters, samplers, and source-interfaces
+to be used.
+
+Optionally, at the end of the configuration scripts, there are lines of code that will enable the user to set different destination IP
+addresses if a condition is met in the hostname. This is intended for environments that require different sites to send NetFlow data to
+different collection servers based on what site they're at. 
+
+For example, devices in Idaho might require NetFlow data be sent to a different
+collection server than devices in Utah. The optional condition statement checks if a string is present in the hostname of the device and,
+if it is present, will use a different destination IP address. Feel free to tweak according to your own needs. 
